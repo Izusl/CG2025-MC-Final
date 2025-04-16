@@ -1,4 +1,6 @@
+
 #include <glm/glm.hpp>
+#include <SDL_main.h>
 #include <string>
 #include <fstream>
 #include "Canis/Canis.hpp"
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
     window.Create("Hello Graphics", Canis::GetConfig().width, Canis::GetConfig().heigth, flags);
     /// END OF WINDOW SETUP
 
-    Canis::World world(&window, &inputManager, "assets/textures/lowpoly-skybox/");
+    Canis::World world(&window, &inputManager, "");
     SpawnLights(world);
 
     Canis::Editor editor(&window, &world, &inputManager);
@@ -82,8 +84,8 @@ int main(int argc, char *argv[])
     /// END OF SHADER
 
     /// Load Image
-    Canis::GLTexture glassTexture = Canis::LoadImageGL("assets/textures/glass.png", true);
-    Canis::GLTexture grassTexture = Canis::LoadImageGL("assets/textures/grass.png", false);
+    Canis::GLTexture glassTexture = Canis::LoadImageGL("assets/textures/grass_block_side.png", true);
+    Canis::GLTexture grassTexture = Canis::LoadImageGL("assets/textures/grass_block_side.png", false);
     Canis::GLTexture textureSpecular = Canis::LoadImageGL("assets/textures/container2_specular.png", true);
     /// End of Image Loading
 
