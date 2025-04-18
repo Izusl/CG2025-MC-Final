@@ -103,7 +103,7 @@ vec3 CalculatePointLight(PointLight _pointLight)
     float attenuation = 1.0 / (_pointLight.constant + _pointLight.linear * distance + _pointLight.quadratic * (distance * distance));    
 
     ambient  *= attenuation;  
-    diffuse   *= attenuation;
+    diffuse  *= attenuation;
     specular *= attenuation;   
         
     return ambient + diffuse + specular;
